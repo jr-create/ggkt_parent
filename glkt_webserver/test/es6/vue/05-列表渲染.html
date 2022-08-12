@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>05-列表渲染</title>
+    </head>
+    <body>
+        <script src="vue.min.js"></script>
+        <!-- id标识vue作用的范围 -->
+        <div id="app">
+            <!-- 2、遍历数据列表 -->
+            <table border="1">
+                <!-- <tr v-for="item in userList"></tr> -->
+                <tr v-for="(item, index) in userList">
+                    <td>{{index}}</td>
+                    <td>{{item.id}}</td>
+                    <td>{{item.username}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            // 创建一个vue对象
+            new Vue({
+                el: '#app',//绑定vue作用的范围
+                data: {
+                    searchMap: {
+                        keyWord: '尚硅谷'
+                    },
+                    ok: false,
+                    userList: [
+                        { id: 1, username: 'helen'},
+                        { id: 2, username: 'peter'},
+                        { id: 3, username: 'andy'}
+                    ]
+                },
+                methods:{
+                    search(){
+                        console.log('search')
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

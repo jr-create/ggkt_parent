@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>03-事件</title>
+    </head>
+    <body>
+        <script src="vue.min.js"></script>
+        <!-- id标识vue作用的范围 -->
+        <div id="app">
+            <!-- v-on 指令绑定事件，click指定绑定的事件类型，事件发生时调用vue中methods节点中定义的方法 -->
+            <button v-on:click="search()">查询</button>
+            <!-- v-on 指令的简写形式 @ -->
+            <button @click="search()">查询</button>
+        </div>
+
+        <script>
+            // 创建一个vue对象
+            new Vue({
+                el: '#app',//绑定vue作用的范围
+                data: {
+                    searchMap: {
+                        keyWord: '尚硅谷'
+                    }
+                },
+                methods:{
+                    search(){
+                        console.log('search')
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>
